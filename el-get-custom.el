@@ -220,7 +220,7 @@ being sent to the underlying shell."
 Each entry is a PLIST where the following properties are
 supported.
 
-If your property list is missing the :type property, then it's
+If your property list is missing the :type property, then it\\='s
 merged with the recipe one, so that you can override any
 definition provided by `el-get' recipes locally.
 
@@ -360,7 +360,7 @@ definition provided by `el-get' recipes locally.
     you want to use. Typically would be \"xzf\", but you might
     want to choose \"xjf\" for handling .tar.bz files e.g.
 
-    When using CVS, when it's set to \"login\", `el-get' will
+    When using CVS, when it\\='s set to \"login\", `el-get' will
     first issue a `cvs login' against the server, asking you
     interactively (in the minibuffer) any password you might to
     enter, and only then it will run the `cvs checkout' command.
@@ -439,7 +439,7 @@ definition provided by `el-get' recipes locally.
     trusted (e.g. anyone is allowed to modify emacswiki anytime).
     For these cases you can set up a checksum value for a
     package, so you will notice if el-get tries to install a
-    version that you haven't seen before.  The installation will
+    version that you haven\\='t seen before.  The installation will
     simply fail and you will see the good and bad checksum values
     in `*Messages*'.  To get the checksum value for a package
     initially, install the package while `el-get-verbose' is on.

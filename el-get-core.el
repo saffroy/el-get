@@ -250,8 +250,8 @@ entry."
 (defun el-get-flatten (arg)
   "Return a version of ARG as a one-level list
 
- (el-get-flatten 'x) => '(x)
- (el-get-flatten '(a (b c (d)) e)) => '(a b c d e)"
+ (el-get-flatten \\='x) => \\='(x)
+ (el-get-flatten \\='(a (b c (d)) e)) => \\='(a b c d e)"
   (if (listp arg)
       (apply 'append (mapcar 'el-get-flatten arg))
     (list arg)))

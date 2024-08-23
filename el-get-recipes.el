@@ -55,7 +55,7 @@ el-get is loaded, while customizations should be loaded after
 el-get, so that they can affect pacakages loaded by el-get.
 It is recommended to add new directories using code like:
 
-  (add-to-list 'el-get-recipe-path \"~/.emacs.d/el-get-user/recipes/\")")
+  (add-to-list \\='el-get-recipe-path \"~/.emacs.d/el-get-user/recipes/\")")
 
 (defcustom el-get-user-package-directory nil
   "Define where to look for init-pkgname.el configurations.  Disabled if nil."
@@ -218,7 +218,7 @@ fields are the default value and R2 may override them."
   "Return the :type property (called method) of PACKAGE-OR-SOURCE.
 
 If the package is built in to the current major version of Emacs,
-return 'builtin."
+return \\='builtin."
   (let* ((def (if (or (symbolp package-or-source) (stringp package-or-source))
                   (el-get-package-def package-or-source)
                 package-or-source))
@@ -239,7 +239,7 @@ return 'builtin."
 Only consider packages whose status is `member' of STATUSES,
 which defaults to installed, required and removed.  Example:
 
-  (el-get-package-types-alist \"installed\" 'http 'cvs)"
+  (el-get-package-types-alist \"installed\" \\='http \\='cvs)"
   (cl-loop for src in (apply 'el-get-list-package-names-with-status
                              (cond ((stringp statuses) (list statuses))
                                    ((null statuses) '("installed" "required"
@@ -299,7 +299,7 @@ of numbers, which will be returned unmodified."
    (t (error "Unrecognized version specification: %S" version))))
 
 (defun el-get-error-unless-required-emacs-version (package-or-source)
-  "Raise an error if `emacs-major-version' is less than package's requirement."
+  "Raise an error if `emacs-major-version' is less than package\\='s requirement."
   (let* ((pname (el-get-source-name package-or-source))
          (required-version (el-get-package-required-emacs-version
                             package-or-source))
