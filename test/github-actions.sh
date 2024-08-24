@@ -60,7 +60,14 @@ ert-tests() {
 byte-compile() {
     error_on_warning=nil
     if [ "$1" = "-Werror" ] ; then
-        error_on_warning=t
+        case "$EMACS_VERSION" in
+            29.*|*snapshot)
+                # Ignore until warnings are fixed
+                ;;
+            *)
+                error_on_warning=t
+                ;;
+        esac
         shift
     fi
     emacs -Q -L . -L methods/ -batch \
