@@ -75,7 +75,15 @@ byte-compile() {
           -f batch-byte-compile "$@"
 }
 
+check-issues() {
+    case "$EMACS_VERSION" in
+        *)
+            test/issues/run-all-tests.sh
+            ;;
+    esac
+}
+
 shopt -s nullglob
 
 # show definitions for log
-declare -f byte-compile ert-tests check-recipes check-whitespace
+declare -f byte-compile ert-tests check-recipes check-whitespace check-issues

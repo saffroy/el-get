@@ -54,3 +54,4 @@ jobs:
         check-recipes -Wno-features -Wno-github -Wno-autoloads recipes/
         check-whitespace
         check-filenames
+        check-issues
