@@ -584,11 +584,11 @@ PACKAGE may be either a string or the corresponding symbol."
 
 (defun el-get-reload (package &optional package-status-alist)
   "Reload PACKAGE."
+  (declare (advertised-calling-convention (package) "Feb 2015"))
   (interactive
    (progn
      (el-get-clear-status-cache)
      (list (el-get-read-package-with-status "Reload" "installed"))))
-  (declare (advertised-calling-convention (package) "Feb 2015"))
   (el-get-verbose-message "el-get-reload: %s" package)
   (el-get-with-status-sources ()
     (let* ((all-features features)
